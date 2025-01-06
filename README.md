@@ -94,6 +94,20 @@ public class ColoredPatternLayout extends Layout {
 }
 ```
 
+## 🧑‍💻
+
+```java
+public static void main(String[] args) {
+        log.debug("This is a debug message.");
+        log.info("This is an info message.");
+        log.warn("This is a warning message.");
+        log.error("This is an error message.");
+        log.fatal("This is a fatal message.");
+
+        licenseLog.info("License log info message");
+    }
+```
+
 ## 🎨 Цвета и уровни логирования
 
 Мы используем ANSI-коды для выделения уровней логирования цветом, что делает логи более читаемыми:
