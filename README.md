@@ -112,4 +112,5 @@ public class ColoredPatternLayout extends Layout {
 
 1. Вы можете настроить цвета и формат вывода в методе `format()` класса `ColoredPatternLayout`.
 2. При настройке `log4j.properties` убедитесь что вы указали правильный `Layout`.
+3. Не смог выровнить message по вертикали, нужно проработать форматирование
 
