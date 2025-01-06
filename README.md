@@ -98,11 +98,11 @@ public class ColoredPatternLayout extends Layout {
 
 Мы используем ANSI-коды для выделения уровней логирования цветом, что делает логи более читаемыми:
 
-*   <span style="color:deepskyblue;">DEBUG:</span>  Синий
-*   <span style="color:lawngreen;">INFO:</span>  Зеленый
-*   <span style="color:goldenrod;">WARN:</span>  Желтый
-*   <span style="color:indianred;">ERROR:</span> Красный
-*   <span style="color:indianred;">**FATAL:**</span> Жирный Красный
+*   **DEBUG:**  Синий 💙
+*   **INFO:** Зеленый 💚
+*   **WARN:** Желтый 💛
+*   **ERROR:** Красный 💖
+*   **FATAL:** Жирный Красный 💔
 
 ## 🖼️ Пример вывода
 
