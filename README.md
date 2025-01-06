@@ -14,7 +14,6 @@
 
 2.  **Настройка `log4j.properties`**:
     *   В вашем файле `log4j.properties` замените `PatternLayout` на наш кастомный класс:
-   ⚙️
 
     ```properties
     log4j.appender.console=org.apache.log4j.ConsoleAppender
