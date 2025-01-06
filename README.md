@@ -51,7 +51,6 @@ public class ColoredPatternLayout extends Layout {
     public String format(LoggingEvent event) {
         String message = event.getMessage();
         String level = event.getLevel().toString();
-        String threadName = event.getThreadName();
         String loggerName = event.getLoggerName();
 
 
