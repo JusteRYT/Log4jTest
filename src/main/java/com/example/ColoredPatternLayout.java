@@ -1,13 +1,20 @@
+package com.example;
+
 import org.apache.log4j.Layout;
 import org.apache.log4j.spi.LoggingEvent;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class ColoredPatternLayout extends Layout {
+
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
     @Override
     public String format(LoggingEvent event) {
-        String buffer = event.getMessage() + "\n";
-
+        String message = (String) event.getMessage();
         String level = event.getLevel().toString();
+        String className = event.getLoggerName(); // Get logger name directly
 
         String colorCode;
         switch (level) {
@@ -30,15 +37,19 @@ public class ColoredPatternLayout extends Layout {
                 colorCode = "";
         }
 
-        String formattedMessage = String.format("%s%s%s%s%s",
-                event.getLoggerName(),
-                " - ",
-                colorCode,
-                level,
-                "\u001B[0m"
-        );
+        String formattedDate = dateFormat.format(new Date(event.getTimeStamp()));
+        String formattedLevel = String.format("%-5s", colorCode + level + "\u001B[0m"); // Use %-5s for left alignment
+        String formattedClassName = String.format("%-20s", className);
 
-        return String.format("%s : %s - %s\n", event.getThreadName(), formattedMessage, buffer);
+
+        String formattedMessage = String.format("%s %s %s -  %s",
+                formattedDate,
+                formattedLevel,
+                formattedClassName,
+                message);
+
+
+        return String.format("%s\n", formattedMessage);
     }
 
     @Override
